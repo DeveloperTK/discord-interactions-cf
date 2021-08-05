@@ -1,0 +1,38 @@
+{
+  "private": true,
+  "name": "discord-cf",
+  "version": "1.0.0",
+  "description": "Discord slash interactions with cloudflare workers",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "NODE_ENV=development wrangler dev",
+    "publish:production": "NODE_ENV=production wrangler publish -e production",
+    "publish:staging": "NODE_ENV=staging wrangler publish -e staging",
+    "logs:production": "wrangler tail -e production",
+    "logs:staging": "wrangler tail -e staging",
+    "lint": "eslint \"{src/**/*,*}.js\"",
+    "lint:fix": "npm run lint -- --fix",
+    "test": "npm run lint"
+  },
+  "author": "Christian Schliz <code@foxat.de>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "discord-interactions": "^2.3.0",
+    "is-valid-domain": "^0.1.0",
+    "slash-commands": "^1.4.0",
+    "web-whois": "0.0.6",
+    "workers-sentry": "0.0.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/plugin-proposal-optional-chaining": "^7.14.5",
+    "@cloudflare/wrangler": "^1.17.0",
+    "babel-loader": "^8.2.2",
+    "deep-equal": "^2.0.5",
+    "dotenv": "^10.0.0",
+    "eslint": "^7.30.0",
+    "node-fetch": "^2.6.1",
+    "webpack": "^4.46.0"
+  }
+}
